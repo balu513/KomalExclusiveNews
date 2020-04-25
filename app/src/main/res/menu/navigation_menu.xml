@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/news"
+        android:title="News"
+        app:showAsAction="always|withText"
+        android:icon="@drawable/everything">
+        <menu>
+    <item android:id="@+id/top_headlines"
+        android:icon="@drawable/headlines"
+        android:title="Top HeadLines"/>
+    <item android:id="@+id/everything"
+        android:icon="@drawable/everything"
+        android:title="Everything"/>
+    <item android:id="@+id/sources"
+        android:icon="@drawable/source"
+        android:title="Sources"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/cricket"
+        android:icon="@drawable/cricket"
+        android:title="Cricket"/>
+    <item android:id="@+id/whether"
+        android:icon="@drawable/whetehr"
+        android:title="Whether"/>
+    <item android:id="@+id/covid"
+        android:icon="@drawable/covid"
+        android:title="Covid-19"/>
+</menu>

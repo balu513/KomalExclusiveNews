@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.balu.komalexclusivenews.viewmodel.NewMatchesViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.cricket.NewMatchesFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_new_matches_recycleView"
+            android:layout_width="match_parent"
+            android:layout_above="@id/tv_bind_check"
+            android:layout_height="match_parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/new_matches_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/news_loading" />
+        <TextView
+            android:id="@+id/tv_bind_check"
+            android:layout_width="wrap_content"
+            android:text="@={viewmodel.randomValue}"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:onClick="@{()->viewmodel.tvBindiClicked()}"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"></TextView>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.TopHeadLinesFragment">
+    <LinearLayout
+        android:layout_gravity="center"
+        android:id="@+id/ll_news_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_article_img"
+            android:layout_width="match_parent"
+            android:src="@drawable/logout"
+            android:layout_height="300dp" />
+        <TextView
+            android:id="@+id/tv_article_description"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:textColor="#000"
+            android:lineSpacingExtra="3dp"
+            android:text="Republicans increasingly believe that elevating
+            China’s culpabilits for spreading the coronavirus may be the
+             best way to improve their difficult election chances. The
+             president is muddying the message."
+            android:layout_height="match_parent">
+        </TextView>
+        <TextView
+            android:id="@+id/tv_article_link"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorPrimary"
+            android:text="https://www.nytimes.com/2020/04/18/us/politics/trump-china-virus.html"
+            android:layout_height="wrap_content">
+        </TextView>
+    </LinearLayout>
+    <!--<android.support.v7.widget.CardView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:elevation="6dp"-->
+    <!--app:cardCornerRadius="6dp"-->
+    <!--app:cardUseCompatPadding="true">-->
+    <!--    </android.support.v7.widget.CardView>-->
+
+
+</ScrollView>
