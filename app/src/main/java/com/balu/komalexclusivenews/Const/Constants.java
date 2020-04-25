@@ -12,8 +12,9 @@ public class Constants {
 
     // ballibalakrishna2334 & Afbb@513
     //https://weatherstack.com/documentation
+    //http://api.weatherstack.com/current?access_key=d292c9d0d539f743f7ccbc10e496cbd3&query=Hyderabad
     public static class Whether {
-        public static String URL_PREFIX_NEWS = "http://api.weatherstack.com/current";
+        public static String URL_PREFIX_NEWS = "http://api.weatherstack.com/";
         public static String API_KEY_NEWS = "d292c9d0d539f743f7ccbc10e496cbd3";
 
     }

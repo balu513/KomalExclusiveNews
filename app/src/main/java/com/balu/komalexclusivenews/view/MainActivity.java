@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.balu.komalexclusivenews.R;
+import com.balu.komalexclusivenews.view.covid.CovidWorldSummaryFragment;
 import com.balu.komalexclusivenews.view.cricket.CricHomeFragment;
 import com.balu.komalexclusivenews.view.cricket.NewMatchesFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -67,7 +68,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.covid:
                         welcomeAnim.setVisibility(View.GONE);
-                     //    launchFragment(null, new );
+                         launchFragment(null, new CovidWorldSummaryFragment());
+                         break;
+                    case R.id.whether:
+                        welcomeAnim.setVisibility(View.GONE);
+                        break;
                     default:
                         return true;
                 }

@@ -20,7 +20,6 @@ public class NewMatchesViewModel extends ViewModel {
     MutableLiveData<NewMatches> successNewMatchesResponseLiveDate = new MutableLiveData<NewMatches>();
     MutableLiveData<String> failureNewMatchesResponseLiveDate = new MutableLiveData<String>();
 
-
     public final ObservableField<String> randomValue = new ObservableField<>();
 
     public NewMatchesViewModel(){
