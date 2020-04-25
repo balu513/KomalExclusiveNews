@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
                          welcomeAnim.setVisibility(View.GONE);
                          launchFragment(null, new CricHomeFragment());
                         break;
+                    case R.id.covid:
+                        welcomeAnim.setVisibility(View.GONE);
+                     //    launchFragment(null, new );
                     default:
                         return true;
                 }
