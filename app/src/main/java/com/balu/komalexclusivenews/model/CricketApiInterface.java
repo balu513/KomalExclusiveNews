@@ -5,6 +5,7 @@ import com.balu.komalexclusivenews.model.cricket.NewMatches;
 import com.balu.komalexclusivenews.model.cricket.PlayerFinder;
 import com.balu.komalexclusivenews.model.cricket.PlayerStat;
 
+import io.reactivex.Single;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -16,7 +17,7 @@ public interface CricketApiInterface {
 
     //https://cricapi.com/api/matchCalendar?apikey=xtHqJY7jB6PeJzpRycNnMmPqxfp1
     @GET("matchCalendar")
-    Call<MatchCalendar> getMatchCalendar(@Query("apikey") String apiKey);
+    Single<MatchCalendar> getMatchCalendar(@Query("apikey") String apiKey);
 
     //https://cricapi.com/api/playerStats?apikey=xtHqJY7jB6PeJzpRycNnMmPqxfp1&pid=35320
     @GET("playerStats")

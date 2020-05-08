@@ -1,12 +1,17 @@
-package com.balu.komalexclusivenews.viewmodel;
+package com.balu.komalexclusivenews.viewmodel.cricket;
 ;
 import android.util.Log;
 
 import com.balu.komalexclusivenews.Const.Constants;
+import com.balu.komalexclusivenews.application.KomalExclusiveNewsApplication;
+import com.balu.komalexclusivenews.model.CricketApiInterface;
+import com.balu.komalexclusivenews.model.NewsApiInterface;
 import com.balu.komalexclusivenews.model.cricket.NewMatches;
 import com.balu.komalexclusivenews.apiClient.CricketApiClient;
 
 import java.util.Random;
+
+import javax.inject.Inject;
 
 import androidx.databinding.ObservableField;
 import androidx.lifecycle.MutableLiveData;
@@ -17,18 +22,22 @@ import retrofit2.Response;
 
 public class NewMatchesViewModel extends ViewModel {
 
+    @Inject
+    CricketApiInterface cricketApiInterface;
+
     MutableLiveData<NewMatches> successNewMatchesResponseLiveDate = new MutableLiveData<NewMatches>();
     MutableLiveData<String> failureNewMatchesResponseLiveDate = new MutableLiveData<String>();
 
     public final ObservableField<String> randomValue = new ObservableField<>();
 
     public NewMatchesViewModel(){
+        KomalExclusiveNewsApplication.getKomalNewsComponent().inject(this);
         setRandomValue();
     }
 
     public void loadNewMatches(){
         Log.d("NewMatchesViewModel", "loadNewMatches");
-        Call<NewMatches> matches = CricketApiClient.getCricketApiClient().getNewMatches(Constants.Cricket.API_KEY_CRICKET);
+        Call<NewMatches> matches = cricketApiInterface.getNewMatches(Constants.Cricket.API_KEY_CRICKET);
         matches.enqueue(new Callback<NewMatches>() {
             @Override
             public void onResponse(Call<NewMatches> call, Response<NewMatches> response) {

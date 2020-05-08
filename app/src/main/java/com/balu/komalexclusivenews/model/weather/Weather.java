@@ -4,7 +4,9 @@ package com.balu.komalexclusivenews.model.weather;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Weather   {
+import androidx.databinding.BaseObservable;
+
+public class Weather  extends BaseObservable {
 
 @SerializedName("request")
 @Expose

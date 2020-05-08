@@ -1,4 +1,4 @@
-package com.balu.komalexclusivenews.model.news;
+package com.balu.komalexclusivenews.mvp.model.news;
 
 import android.os.Parcel;
 import android.os.Parcelable;

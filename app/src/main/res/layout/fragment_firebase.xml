@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.firebase.FirebaseFragment">
+
+    <Button
+        android:id="@+id/btn_auth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Authentication"></Button>
+
+    <Button
+        android:id="@+id/btn_analytics"
+        app:layout_constraintTop_toBottomOf="@id/btn_auth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google Analytics Event" />
+    <Button
+        android:id="@+id/btn_cloud_messaging"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_analytics"
+        android:text="Cloud Messaging"></Button>
+    <Button
+        android:id="@+id/btn_real_time_database"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_cloud_messaging"
+        android:text="Realtime Database"></Button>
+    <Button
+        android:id="@+id/btn_storage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_real_time_database"
+        android:text="Storage"></Button>
+    <Button
+        android:id="@+id/btn_remote_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_storage"
+        android:text="Remote Config"></Button>
+    <Button
+        android:id="@+id/btn_app_indexing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_remote_config"
+        android:text="App Indexing"></Button>
+    <Button
+        android:id="@+id/btn_dynamic_links"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_app_indexing"
+        android:text="Dynamic Links"></Button>
+    <Button
+        android:id="@+id/btn_in_app_messaging"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_dynamic_links"
+        android:text="In-App Messaging"></Button>
+    <Button
+        android:id="@+id/btn_ml_kit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_in_app_messaging"
+        android:text="ML Kit"></Button>
+    <Button
+        android:id="@+id/btn_invites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_ml_kit"
+        android:text="Invites"></Button>
+    <Button
+        android:id="@+id/btn_ad_mob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_invites"
+        android:text="Admob"></Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

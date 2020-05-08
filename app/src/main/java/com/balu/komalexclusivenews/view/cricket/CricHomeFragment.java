@@ -8,10 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.balu.komalexclusivenews.R;
-import com.balu.komalexclusivenews.view.MainActivity;
+import com.balu.komalexclusivenews.mvp.view.MainActivity;
 
 
 public class CricHomeFragment extends Fragment{
@@ -30,6 +29,12 @@ public class CricHomeFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 ((MainActivity)getActivity()).launchFragment(null, new NewMatchesFragment());
+            }
+        });
+        view.findViewById(R.id.card_match_calendar).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).launchFragment(null, new MatchCalendarFragment());
             }
         });
     }

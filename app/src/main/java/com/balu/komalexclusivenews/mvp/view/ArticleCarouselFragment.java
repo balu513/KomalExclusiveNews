@@ -1,4 +1,4 @@
-package com.balu.komalexclusivenews.view;
+package com.balu.komalexclusivenews.mvp.view;
 
 
 import android.graphics.Bitmap;
@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.balu.komalexclusivenews.R;
-import com.balu.komalexclusivenews.model.news.Article;
+import com.balu.komalexclusivenews.mvp.model.news.Article;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;

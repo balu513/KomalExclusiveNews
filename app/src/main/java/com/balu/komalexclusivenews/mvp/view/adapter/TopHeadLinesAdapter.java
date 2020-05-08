@@ -1,4 +1,4 @@
-package com.balu.komalexclusivenews.view.Adapter;
+package com.balu.komalexclusivenews.mvp.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.balu.komalexclusivenews.R;
-import com.balu.komalexclusivenews.model.news.Article;
-import com.balu.komalexclusivenews.model.news.TopHeadlines;
+import com.balu.komalexclusivenews.mvp.model.news.Article;
+import com.balu.komalexclusivenews.mvp.model.news.TopHeadlines;
 import com.bumptech.glide.Glide;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.balu.komalexclusivenews.view;
+package com.balu.komalexclusivenews.mvp.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -11,7 +11,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +19,8 @@ import android.widget.Toast;
 import com.balu.komalexclusivenews.R;
 import com.balu.komalexclusivenews.view.covid.CovidWorldSummaryFragment;
 import com.balu.komalexclusivenews.view.cricket.CricHomeFragment;
-import com.balu.komalexclusivenews.view.cricket.NewMatchesFragment;
+import com.balu.komalexclusivenews.view.firebase.FirebaseFragment;
+import com.balu.komalexclusivenews.view.weather.WeatherFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -72,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
                          break;
                     case R.id.whether:
                         welcomeAnim.setVisibility(View.GONE);
+                        launchFragment(null, new WeatherFragment());
+                        break;
+                    case R.id.firebase:
+                        welcomeAnim.setVisibility(View.GONE);
+                        launchFragment(null, new FirebaseFragment());
                         break;
                     default:
                         return true;

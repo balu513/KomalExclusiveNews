@@ -1,12 +1,12 @@
-package com.balu.komalexclusivenews.view.Adapter;
+package com.balu.komalexclusivenews.mvp.view.adapter;
 
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.balu.komalexclusivenews.model.news.Article;
-import com.balu.komalexclusivenews.view.ArticleCarouselFragment;
+import com.balu.komalexclusivenews.mvp.model.news.Article;
+import com.balu.komalexclusivenews.mvp.view.ArticleCarouselFragment;
 
 import java.util.List;
 

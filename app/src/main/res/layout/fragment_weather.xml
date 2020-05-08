@@ -12,41 +12,61 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.weather.WeatherFragment">
+        tools:context=".view.weather.WeatherFragment"
+        android:gravity="center_horizontal"
+        android:layout_margin="10dp">
 
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <EditText
-        app:textChangedListener="@{weatherViewmodel.locationTextWatcher}"
+        android:id="@+id/et_input_place"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:layout_toLeftOf="@id/btn_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:text="SEARCH"></Button>
+</RelativeLayout>
+<ImageView
+    android:id="@+id/iv_icon_weather"
+    android:layout_width="wrap_content"
+    android:layout_height="200dp"/>
     <TextView
+        android:id="@+id/tv_location_weather"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@{weatherViewmodel.weather.location.name}" />
+        android:layout_height="wrap_content"
+        />
     <TextView
+        android:id="@+id/tv_region_weather"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@{weatherViewmodel.weather.location.region}" />
+        android:layout_height="wrap_content" />
     <TextView
+        android:id="@+id/tv_country_weather"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@{weatherViewmodel.weather.location.country}"/>
+        android:layout_height="wrap_content" />
     <TextView
+        android:id="@+id/tv_time_weather"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@{weatherViewmodel.weather.current.observationTime}"/>
+        android:layout_height="wrap_content" />
     <TextView
+        android:id="@+id/tv_temp_weather"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@{weatherViewmodel.weather.current.temperature}"/>
+        android:layout_height="wrap_content" />
     <TextView
+        android:id="@+id/tv_humidity_weather"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@{weatherViewmodel.weather.current.humidity}"/>
+        android:layout_height="wrap_content" />
     <TextView
+        android:id="@+id/tv_description_weather"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@{weatherViewmodel.weather.current.weatherDescriptions[0]}" />
+        android:layout_height="wrap_content" />
     </LinearLayout>
 
 </layout>

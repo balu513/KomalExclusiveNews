@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="EditTextHint" parent="TextAppearance.AppCompat">
+        <item name="colorAccent">@android:color/white</item>
+        <item name="android:textColorHint">#ffff</item>
+        <item name="colorControlNormal">#EF2C2C</item>
+        <item name="colorControlActivated">#FFEB3B</item>
+        <item name="colorControlHighlight">#9C27B0</item>
+    </style>
+
 </resources>

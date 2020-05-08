@@ -1,9 +1,13 @@
 package com.balu.komalexclusivenews.model.weather;
 
+import com.balu.komalexclusivenews.BR;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Location {
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+
+public class Location  extends BaseObservable {
 
 @SerializedName("name")
 @Expose
@@ -33,12 +37,15 @@ private Integer localtimeEpoch;
 @Expose
 private String utcOffset;
 
+@Bindable
 public String getName() {
 return name;
 }
 
-public void setName(String name) {
+public void setName(String name)
+{
 this.name = name;
+notifyPropertyChanged(BR.name);
 }
 
 public String getCountry() {

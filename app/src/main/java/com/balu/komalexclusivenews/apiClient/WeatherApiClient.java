@@ -3,13 +3,18 @@ package com.balu.komalexclusivenews.apiClient;
 import com.balu.komalexclusivenews.Const.Constants;
 import com.balu.komalexclusivenews.model.WeatherApiInterfa;
 
+import dagger.Module;
+import dagger.Provides;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+@Module
 public class WeatherApiClient {
-    public static WeatherApiInterfa getWeatherApiClient(){
+
+    @Provides
+    public  WeatherApiInterfa providesWeatherApiClient(){
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(interceptor).build();

@@ -3,7 +3,11 @@ package com.balu.komalexclusivenews.viewmodel.covid;
 import android.util.Log;
 
 import com.balu.komalexclusivenews.apiClient.CovidApiClient;
+import com.balu.komalexclusivenews.application.KomalExclusiveNewsApplication;
+import com.balu.komalexclusivenews.model.CovidApiInterface;
 import com.balu.komalexclusivenews.model.covid.CovidWorldSummary;
+
+import javax.inject.Inject;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -16,8 +20,16 @@ public class CovidWorldSummaryViewModel extends ViewModel {
     MutableLiveData<CovidWorldSummary> successCovidWorldSummaryMutableLiveData = new MutableLiveData<CovidWorldSummary>();
     MutableLiveData<String> failureCovidWorldSummaryMutableLiveData = new MutableLiveData<String>();
 
+    @Inject
+    CovidApiInterface covidApiInterface;
+
+    public CovidWorldSummaryViewModel() {
+        KomalExclusiveNewsApplication.getKomalNewsComponent().inject(this);
+    }
+
+
     public  void loadCovidWorldSummary(){
-        Call<CovidWorldSummary> covidSummary = CovidApiClient.getCovidApiClientWorld().getCovidSummary();
+        Call<CovidWorldSummary> covidSummary = covidApiInterface.getCovidSummary();
         covidSummary.enqueue(new Callback<CovidWorldSummary>() {
             @Override
             public void onResponse(Call<CovidWorldSummary> call, Response<CovidWorldSummary> response) {
