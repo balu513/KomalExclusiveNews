@@ -10,16 +10,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mvp.view.MainActivity"></activity>
+        <activity android:name=".mvp.view.LoginActivity"></activity>
+
+        <activity android:name=".android_concepts.IntentServiceActivity" />
+
+        <activity android:name=".android_concepts.WorkManagerActivity" />
+        <activity android:name=".android_concepts.AndroidConceptsActivity" />
+        <activity android:name=".mvp.view.MainActivity" />
         <activity android:name=".view.cricket.CricketHomeActivity" />
         <activity android:name=".mvp.view.ArticleDetailActivity" />
-        <activity android:name=".mvp.view.LoginActivity">
+        <activity android:name=".android_concepts.RXJava.RxJavaOperatorsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".android_concepts.service.MyIntentService" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

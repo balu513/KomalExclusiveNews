@@ -93,6 +93,7 @@ public class LoginFragment extends Fragment implements IView.ILogin{
         btnLoginSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getActivity(), MainActivity.class));
                 if(isLogin){
                     logInPresenter.isValidUser(name_et.getText().toString(), password_et.getText().toString());
                 }

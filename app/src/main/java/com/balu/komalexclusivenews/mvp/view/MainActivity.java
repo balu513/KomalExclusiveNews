@@ -11,12 +11,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.balu.komalexclusivenews.R;
+import com.balu.komalexclusivenews.android_concepts.AndroidConceptsActivity;
 import com.balu.komalexclusivenews.view.covid.CovidWorldSummaryFragment;
 import com.balu.komalexclusivenews.view.cricket.CricHomeFragment;
 import com.balu.komalexclusivenews.view.firebase.FirebaseFragment;
@@ -77,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.firebase:
                         welcomeAnim.setVisibility(View.GONE);
                         launchFragment(null, new FirebaseFragment());
+                        break;
+                    case R.id.android_concepts:
+                        welcomeAnim.setVisibility(View.GONE);
+                        startActivity(new Intent(MainActivity.this, AndroidConceptsActivity.class));
                         break;
                     default:
                         return true;

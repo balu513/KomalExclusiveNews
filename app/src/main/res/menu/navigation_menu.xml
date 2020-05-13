@@ -29,6 +29,9 @@
         android:icon="@drawable/covid"
         android:title="Covid-19"/>
     <item android:id="@+id/firebase"
-        android:icon="@drawable/googleg_standard_color_18"
+        android:icon="@drawable/goo"
         android:title="Firebse"/>
+    <item android:id="@+id/android_concepts"
+        android:icon="@drawable/androidicon"
+        android:title="Android Concepts"/>
 </menu>

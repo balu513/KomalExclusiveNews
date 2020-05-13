@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".android_concepts.AndroidConceptsActivity">
+
+    <Button
+        android:id="@+id/work_manager_btn"
+        android:layout_width="match_parent"
+        android:text="Work Manager"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/intent_service_btn"
+        android:layout_width="match_parent"
+        android:text="IntentService"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/start_service_btn"
+        android:layout_width="match_parent"
+        android:text="StartService"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/bound_service_btn"
+        android:layout_width="match_parent"
+        android:text="BindService"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/aidl_btn"
+        android:layout_width="match_parent"
+        android:text="AIDL"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/messanger_btn"
+        android:layout_width="match_parent"
+        android:text="Messanger"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
