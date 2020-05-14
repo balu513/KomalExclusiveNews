@@ -3,14 +3,14 @@ package com.balu.komalexclusivenews.Const;
 
 public class Constants {
 
-    // ballibalakrishna2334 & Afbb@513
+    // ballibalakrishna2334 & FirstCompany@btechrl
     //https://newsapi.org/docs/endpoints/top-headlines
     public static class News {
         public static String API_KEY = "be0a5563a77c48d28f85e45ddf8a8a8e";
         public static String URL_PREFIX = "https://newsapi.org/v2/";
     }
 
-    // ballibalakrishna2334 & Afbb@513
+    // ballibalakrishna2334 & FirstCompany@btechrl
     //https://weatherstack.com/documentation
     //http://api.weatherstack.com/current?access_key=d292c9d0d539f743f7ccbc10e496cbd3&query=Hyderabad
     public static class Whether {
