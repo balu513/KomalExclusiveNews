@@ -27,7 +27,11 @@ Free APIs:
 _________________
 
 NEWS:
-https://newsapi.org/docs/endpoints/top-headlines  ------->> credentials : ballibalakrishna2334
+https://newsapi.org/docs/endpoints/top-headlines   ------->> credentials : ballibalakrishna2334
+HeadLines:              https://newsapi.org/v2/top-headlines?apikey=be0a5563a77c48d28f85e45ddf8a8a8e&country=in
+EveryThing:             https://newsapi.org/v2/everything?q=bitcoin&apiKey=be0a5563a77c48d28f85e45ddf8a8a8e
+Sources:                https://newsapi.org/v2/sources?apiKey=be0a5563a77c48d28f85e45ddf8a8a8e
+
 
 WHETHER:
 https://weatherstack.com/documentation
@@ -35,7 +39,6 @@ http://api.weatherstack.com/current?access_key=d292c9d0d539f743f7ccbc10e496cbd3&
 
 CRICKET:
 https://www.cricapi.com/member-test.aspx  ->> komalreddy2334@gmail.com
-
 New matches:               https://cricapi.com/api/matches?apikey=xtHqJY7jB6PeJzpRycNnMmPqxfp1
 Old Matches:               https://cricapi.com/api/cricket?apikey=xtHqJY7jB6PeJzpRycNnMmPqxfp1
 Cricket Score:             https://cricapi.com/api/cricketScore?apikey=xtHqJY7jB6PeJzpRycNnMmPqxfp1&unique_id=1034809
@@ -45,6 +48,7 @@ Fantasy API Summary:       https://cricapi.com/api/fantasySummary?apikey=xtHqJY7
 Fantasy API Squad:         https://cricapi.com/api/fantasySquad?apikey=xtHqJY7jB6PeJzpRycNnMmPqxfp1&unique_id=1034809
 PlayerFinder:              https://cricapi.com/api/playerFinder?apikey=xtHqJY7jB6PeJzpRycNnMmPqxfp1&name=Tendulkar
 
+   *************  RapidApi   *************
 COVID:
 https://corona-virus-world-and-india-data.p.rapidapi.com/api
 headers: x-rapidapi-host ->corona-virus-world-and-india-data.p.rapidapi.com
