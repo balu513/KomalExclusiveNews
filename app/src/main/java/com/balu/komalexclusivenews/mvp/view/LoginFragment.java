@@ -182,8 +182,39 @@ public class LoginFragment extends Fragment implements IView.ILogin{
                 }
             }
         });
+        view.findViewById(R.id.google).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                googleLogin();
+            }
+        });
+        view.findViewById(R.id.facebook).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                facebookLogin();
+            }
+        });
+        view.findViewById(R.id.twitter).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                twitterLogin();
+            }
+        });
 
         return view;
+    }
+
+    private void twitterLogin() {
+        Toast.makeText(getActivity().getApplicationContext(),"Twitter sign in",Toast.LENGTH_SHORT).show();
+    }
+
+    private void facebookLogin() {
+        Toast.makeText(getActivity().getApplicationContext(),"Facebook sign in",Toast.LENGTH_SHORT).show();
+    }
+
+    private void googleLogin() {
+        Toast.makeText(getActivity().getApplicationContext(),"Google sign in",Toast.LENGTH_SHORT).show();
+
     }
 
     private void initView(){
