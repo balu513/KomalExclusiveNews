@@ -21,7 +21,7 @@ import com.balu.komalexclusivenews.R;
 import com.balu.komalexclusivenews.android_concepts.AndroidConceptsActivity;
 import com.balu.komalexclusivenews.view.covid.CovidWorldSummaryFragment;
 import com.balu.komalexclusivenews.view.cricket.CricHomeFragment;
-import com.balu.komalexclusivenews.view.firebase.FirebaseFragment;
+import com.balu.komalexclusivenews.firebase.view.FirebaseFragment;
 import com.balu.komalexclusivenews.view.weather.WeatherFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         nv = findViewById(R.id.nv);
+
+
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -83,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.android_concepts:
                         welcomeAnim.setVisibility(View.GONE);
                         startActivity(new Intent(MainActivity.this, AndroidConceptsActivity.class));
+                        break;
+                    case R.id.logout:
+                        Toast.makeText(getApplicationContext(),"Logout successfully",Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         return true;
@@ -144,5 +149,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
 }
 

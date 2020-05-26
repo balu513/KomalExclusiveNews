@@ -1,4 +1,4 @@
-package com.balu.komalexclusivenews.view.firebase;
+package com.balu.komalexclusivenews.firebase.view;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.balu.komalexclusivenews.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FirebaseFragment#newInstance} factory method to
+ * Use the {@link FirebaseCloudMsgFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FirebaseFragment extends Fragment {
+public class FirebaseCloudMsgFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -25,7 +25,7 @@ public class FirebaseFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FirebaseFragment() {
+    public FirebaseCloudMsgFragment() {
         // Required empty public constructor
     }
 
@@ -35,11 +35,11 @@ public class FirebaseFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FirebaseFragment.
+     * @return A new instance of fragment FirebaseCloudMsgFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FirebaseFragment newInstance(String param1, String param2) {
-        FirebaseFragment fragment = new FirebaseFragment();
+    public static FirebaseCloudMsgFragment newInstance(String param1, String param2) {
+        FirebaseCloudMsgFragment fragment = new FirebaseCloudMsgFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,7 +60,6 @@ public class FirebaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_firebase, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_firebase_cloud_msg, container, false);
     }
 }

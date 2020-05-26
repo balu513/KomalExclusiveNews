@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "47344842019",
+    "firebase_url": "https://komalexclusivenews.firebaseio.com",
+    "project_id": "komalexclusivenews",
+    "storage_bucket": "komalexclusivenews.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47344842019:android:7c76358e221c3cdce30896",
+        "android_client_info": {
+          "package_name": "com.balu.komalexclusivenews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47344842019-pmn9knftnithc2lmb5d1ev8lqjf6bq1q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.balu.komalexclusivenews",
+            "certificate_hash": "be77d9813ba60d76cc119888526eaa41182fb286"
+          }
+        },
+        {
+          "client_id": "47344842019-t7pfhn03vjcivj4fd9m2mj0m5225ge2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwCP25QFe34c7G5NUJ2GY5X_2Mm3-5v0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47344842019-t7pfhn03vjcivj4fd9m2mj0m5225ge2t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

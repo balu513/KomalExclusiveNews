@@ -1,6 +1,8 @@
 package com.balu.komalexclusivenews.android_concepts.RXJava;
 
-public class Task {
+import java.util.Comparator;
+
+public class Task implements Comparable<Task> {
 
     private String description;
     private boolean isComplete;
@@ -34,6 +36,13 @@ public class Task {
 
     public void setPriority(int priority) {
         this.priority = priority;
+    }
+
+    @Override
+    public int compareTo(Task o) {
+        return this.description .compareTo( o.description);
+
+
     }
     // getter and setters ...
 

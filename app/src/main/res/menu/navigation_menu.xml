@@ -34,4 +34,7 @@
     <item android:id="@+id/android_concepts"
         android:icon="@drawable/androidicon"
         android:title="Android Concepts"/>
+    <item android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:title="Logout"/>
 </menu>

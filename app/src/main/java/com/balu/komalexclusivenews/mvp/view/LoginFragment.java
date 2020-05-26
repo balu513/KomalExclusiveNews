@@ -1,9 +1,16 @@
 package com.balu.komalexclusivenews.mvp.view;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,14 +31,20 @@ import com.balu.komalexclusivenews.mvp.model.login.User;
 import com.balu.komalexclusivenews.mvp.model.login.UserDao;
 import com.balu.komalexclusivenews.mvp.presenter.LogInPresenter;
 import com.balu.komalexclusivenews.util.Utils;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import javax.inject.Inject;
 
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.READ_CONTACTS;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 public class LoginFragment extends Fragment implements IView.ILogin{
 
     private static final String ARG_PARAM1 = "param1";
+    private static final int PERMISSION_REQUEST_CODE = 200;
 
     private boolean isLogin;
 
@@ -81,10 +94,77 @@ public class LoginFragment extends Fragment implements IView.ILogin{
         }
     }
 
+    private void handleRunTimePermissions(){
+        if (checkPermission()){
+            Toast.makeText(getContext(),"Permission already granted.",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(getContext(),"Please Request permission.",Toast.LENGTH_SHORT).show();
+            requestPermission();
+        }
+
+    }
+    private void requestPermission(){
+        ActivityCompat.requestPermissions(getActivity(),new String[]{READ_CONTACTS,WRITE_EXTERNAL_STORAGE,CAMERA}, PERMISSION_REQUEST_CODE);
+    }
+
+    private boolean checkPermission(){
+        int resultcontact = ContextCompat.checkSelfPermission(getContext(),READ_CONTACTS);
+        int resultStorage = ContextCompat.checkSelfPermission(getContext(),WRITE_EXTERNAL_STORAGE);
+        int resultCamera = ContextCompat.checkSelfPermission(getContext(), CAMERA);
+
+        return resultCamera == PackageManager.PERMISSION_GRANTED && resultStorage == PackageManager.PERMISSION_GRANTED && resultcontact == PackageManager.PERMISSION_GRANTED;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == PERMISSION_REQUEST_CODE){
+            if(grantResults.length > 0){
+                boolean contactAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                boolean storageAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                boolean cameraAccepted = grantResults[2] == PackageManager.PERMISSION_GRANTED;
+
+                if (contactAccepted && storageAccepted && cameraAccepted)
+                    Toast.makeText(getContext(), "Permission Granted, Now you can access contact storage and camera.", Toast.LENGTH_LONG).show();
+                else {
+
+                    Toast.makeText(getContext(), "Permission Denied, You cannot access contact storage and camera.", Toast.LENGTH_LONG).show();
+
+                    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ){
+                        if(shouldShowRequestPermissionRationale(CAMERA)){
+                            showMessageOKCancel("You need to allow access to both the permissions",
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                                requestPermissions(new String[]{READ_CONTACTS,WRITE_EXTERNAL_STORAGE,CAMERA},
+                                                        PERMISSION_REQUEST_CODE);
+                                            }
+                                        }
+                                    });
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
+        new AlertDialog.Builder(getActivity())
+                .setMessage(message)
+                .setPositiveButton("OK", okListener)
+                .setNegativeButton("Cancel", null)
+                .create()
+                .show();
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
+        handleRunTimePermissions();
         ButterKnife.bind(this,view);
         KomalExclusiveNewsApplication.getKomalNewsComponent().inject(this);
         logInPresenter = new LogInPresenter(this, isLogin, userDao);

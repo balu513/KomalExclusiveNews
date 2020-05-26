@@ -20,7 +20,10 @@ private Integer totalResults;
 @Expose
 private List<Article> articles = null;
 
-    protected TopHeadlines(Parcel in) {
+    public TopHeadlines() {
+    }
+
+    public TopHeadlines(Parcel in) {
         status = in.readString();
         if (in.readByte() == 0) {
             totalResults = null;

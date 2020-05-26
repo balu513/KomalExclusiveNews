@@ -22,6 +22,9 @@ import com.balu.komalexclusivenews.R;
 
 import org.reactivestreams.Subscription;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
@@ -52,8 +55,23 @@ public class RxJavaOperatorsActivity extends AppCompatActivity {
 //        takeWhileFilterOperator();
 //        map();
 //        buffer();
+        sort();
 
 
+    }
+
+    private void sort(){
+        List<Task>  list = DataSource.createTasksList();
+        Collections.sort(list);
+        for(Task item : list){
+            Log.d("Sort ",item.getDescription());
+        }
+
+        Collections.sort(list, Collections.reverseOrder());
+
+        for(Task item : list){
+            Log.d("Sortreve ",item.getDescription());
+        }
     }
 
     private void buffer() {
